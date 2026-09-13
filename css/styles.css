@@ -1,0 +1,448 @@
+:root {
+  --blue: #1A1AE0;
+  --blue-dark: #10108C;
+  --blue-tint: #EEF0FF;
+  --cream: #FFFDF7;
+  --ink: #1B1F2A;
+  --ink-soft: #4B5266;
+  --whatsapp: #25D366;
+  --whatsapp-dark: #1DA851;
+  --radius: 14px;
+  --shadow: 0 10px 30px rgba(26, 26, 224, 0.08);
+  --max-width: 1160px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, sans-serif;
+  color: var(--ink);
+  background: var(--cream);
+  line-height: 1.55;
+}
+
+h1, h2, h3 {
+  font-family: 'Merriweather', Georgia, serif;
+  line-height: 1.2;
+  margin: 0 0 0.5em;
+}
+
+p { margin: 0 0 1em; color: var(--ink-soft); }
+
+a { color: var(--blue); text-decoration: none; }
+
+img, svg { max-width: 100%; }
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 22px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+.btn:hover { transform: translateY(-2px); }
+.btn-lg { padding: 15px 30px; font-size: 1.05rem; }
+
+.btn-primary {
+  background: var(--blue);
+  color: #fff;
+}
+.btn-primary:hover { background: var(--blue-dark); }
+
+.btn-outline {
+  background: transparent;
+  border-color: var(--blue);
+  color: var(--blue);
+}
+.btn-outline:hover { background: var(--blue-tint); }
+
+.btn-whatsapp {
+  background: var(--whatsapp);
+  color: #fff;
+}
+.btn-whatsapp:hover { background: var(--whatsapp-dark); }
+
+/* Header */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(255, 253, 247, 0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(26, 26, 224, 0.08);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 12px 20px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-right: auto;
+}
+.brand-logo { width: 40px; height: 36px; }
+.brand-text { display: flex; flex-direction: column; line-height: 1.1; }
+.brand-name {
+  font-family: 'Merriweather', Georgia, serif;
+  font-weight: 900;
+  font-size: 1.25rem;
+  color: var(--blue);
+}
+.brand-sub {
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.main-nav {
+  display: flex;
+  gap: 22px;
+}
+.main-nav a {
+  color: var(--ink);
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+.main-nav a:hover { color: var(--blue); }
+
+.header-cta { white-space: nowrap; }
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+}
+.nav-toggle span {
+  width: 24px;
+  height: 2px;
+  background: var(--ink);
+}
+
+/* Hero */
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: 70px 0 60px;
+}
+.hero-inner {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: center;
+  gap: 40px;
+}
+.eyebrow {
+  color: var(--blue);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  margin-bottom: 10px;
+}
+.eyebrow.center, .section-title.center, .section-lead.center { text-align: center; }
+
+.hero h1 {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  color: var(--ink);
+}
+.hero-lead {
+  font-size: 1.1rem;
+  max-width: 46ch;
+}
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin: 26px 0 34px;
+}
+.hero-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 28px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.hero-stats li {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+}
+.hero-stats strong {
+  color: var(--blue);
+  font-family: 'Merriweather', serif;
+  font-size: 1.05rem;
+}
+.hero-art { display: flex; justify-content: center; }
+.hero-drop { width: 100%; max-width: 320px; }
+
+/* Trust bar */
+.trustbar {
+  background: var(--blue-tint);
+  padding: 24px 0;
+}
+.trustbar-label {
+  text-align: center;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-bottom: 14px;
+}
+.trust-logos {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  padding: 0;
+  margin: 0;
+}
+.trust-logos li {
+  font-family: 'Merriweather', serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--blue-dark);
+  opacity: 0.75;
+}
+
+/* Sections */
+.section { padding: 80px 0; }
+.section-alt { background: #fff; }
+.section-title { font-size: clamp(1.6rem, 3vw, 2.1rem); }
+.section-lead {
+  max-width: 60ch;
+  margin: 0 auto 40px;
+  font-size: 1.05rem;
+}
+.center { margin-left: auto; margin-right: auto; }
+
+/* Cards */
+.cards-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  margin-top: 20px;
+}
+.card {
+  background: #fff;
+  border-radius: var(--radius);
+  padding: 34px;
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(26,26,224,0.06);
+}
+.card-featured {
+  background: var(--blue);
+  color: #fff;
+}
+.card-featured h3, .card-featured p, .card-featured .check-list li { color: #fff; }
+.card-featured .card-link { color: #fff; text-decoration: underline; }
+.card-icon { font-size: 2rem; margin-bottom: 10px; }
+.check-list {
+  list-style: none;
+  padding: 0;
+  margin: 18px 0;
+}
+.check-list li {
+  padding-left: 26px;
+  position: relative;
+  margin-bottom: 10px;
+  color: var(--ink-soft);
+}
+.check-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: inherit;
+  font-weight: 700;
+}
+.card-featured .check-list li::before { color: #fff; }
+.card-link {
+  font-weight: 600;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.cards-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-top: 20px;
+}
+.service {
+  text-align: center;
+  padding: 20px;
+}
+.service-icon { font-size: 2rem; margin-bottom: 10px; }
+.service h3 { font-size: 1.05rem; }
+.service p { font-size: 0.92rem; }
+
+/* Nosotros */
+.nosotros-inner {
+  display: grid;
+  grid-template-columns: 1.3fr 0.7fr;
+  gap: 40px;
+  align-items: center;
+}
+.nosotros-map {
+  background: var(--blue-tint);
+  border-radius: var(--radius);
+  padding: 40px 24px;
+  text-align: center;
+}
+.map-pin { font-size: 2.5rem; margin-bottom: 10px; }
+
+/* Contact */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 40px;
+  margin-top: 20px;
+}
+.contact-form {
+  background: var(--blue-tint);
+  padding: 30px;
+  border-radius: var(--radius);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.contact-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  font-family: inherit;
+  font-size: 0.95rem;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(26,26,224,0.2);
+  background: #fff;
+}
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.contact-item {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  color: var(--ink);
+}
+.contact-icon { font-size: 1.3rem; }
+.map-embed {
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+/* Footer */
+.site-footer {
+  background: var(--blue-dark);
+  color: #dfe1ff;
+  padding: 40px 0;
+}
+.footer-inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+.footer-brand .brand-name { color: #fff; font-size: 1.2rem; }
+.footer-brand p { color: #b9bcf5; margin: 4px 0 0; font-size: 0.85rem; }
+.footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+.footer-nav a { color: #dfe1ff; font-size: 0.9rem; }
+.footer-nav a:hover { color: #fff; }
+.footer-copy {
+  width: 100%;
+  text-align: center;
+  font-size: 0.8rem;
+  color: #9498e0;
+  margin: 20px 0 0;
+}
+
+/* WhatsApp floating button */
+.whatsapp-float {
+  position: fixed;
+  bottom: 22px;
+  right: 22px;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: var(--whatsapp);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+  z-index: 60;
+  transition: transform 0.15s ease;
+}
+.whatsapp-float:hover { transform: scale(1.08); }
+
+/* Responsive */
+@media (max-width: 960px) {
+  .hero-inner { grid-template-columns: 1fr; }
+  .hero-art { order: -1; max-width: 220px; margin: 0 auto; }
+  .cards-2 { grid-template-columns: 1fr; }
+  .cards-4 { grid-template-columns: 1fr 1fr; }
+  .nosotros-inner { grid-template-columns: 1fr; }
+  .contact-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 720px) {
+  .main-nav { display: none; }
+  .header-cta { display: none; }
+  .nav-toggle { display: flex; }
+
+  .main-nav.open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--cream);
+    padding: 16px 20px;
+    border-bottom: 1px solid rgba(26,26,224,0.1);
+    gap: 14px;
+  }
+  .cards-4 { grid-template-columns: 1fr; }
+  .trust-logos { gap: 20px; }
+}
