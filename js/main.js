@@ -15,6 +15,21 @@ mainNav.querySelectorAll('a').forEach(link => {
   });
 });
 
+const tabButtons = document.querySelectorAll('.tab-btn');
+const productCards = document.querySelectorAll('.product-card');
+
+tabButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    tabButtons.forEach(btn => btn.classList.remove('active'));
+    button.classList.add('active');
+    const filter = button.dataset.filter;
+    productCards.forEach(card => {
+      const matches = filter === 'todos' || card.dataset.category === filter;
+      card.classList.toggle('hidden', !matches);
+    });
+  });
+});
+
 const contactForm = document.getElementById('contactForm');
 contactForm.addEventListener('submit', (event) => {
   event.preventDefault();
